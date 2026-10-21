@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تفکر پروداکت در منابع انسانی</title>
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A4A;
+    --navy-deep:#12203A;
+    --navy-soft:#2E4370;
+    --white:#FFFFFF;
+    --mist:#F4F6FA;
+    --line:#D8DEEA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;overflow:hidden;}
+  body{font-family:"Vazir","Vazirmatn",Tahoma,"Segoe UI",sans-serif;background:var(--navy-deep);color:var(--navy);}
+  .slide{display:none;min-height:100vh;padding:64px 80px;flex-direction:column;justify-content:center;gap:24px;}
+  .slide.active{display:flex;}
+  .slide.white{background:var(--white);}
+  .slide.navy{background:var(--navy);color:var(--white);}
+  .kicker{display:inline-block;font-size:15px;font-weight:700;color:var(--navy-soft);border:1.5px solid var(--line);border-radius:999px;padding:6px 18px;width:fit-content;}
+  .navy .kicker{color:var(--white);border-color:rgba(255,255,255,.35);}
+  h1{font-size:64px;font-weight:900;line-height:1.25;}
+  h2{font-size:40px;font-weight:900;line-height:1.35;}
+  h1,h2,h3,.big{font-family:"B Titr","Titr","B TITR","Vazir","Vazirmatn",Tahoma,sans-serif;font-weight:900;}
+  .lead{font-size:23px;font-weight:300;line-height:1.9;color:var(--navy-soft);max-width:950px;}
+  .navy .lead{color:#C9D4E8;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+  .card{background:var(--mist);border:1px solid var(--line);border-radius:18px;padding:26px 24px;}
+  .navy .card{background:var(--navy-soft);border-color:rgba(255,255,255,.18);color:var(--white);}
+  .card h3{font-size:21px;font-weight:700;margin-bottom:10px;}
+  .card p{font-size:16.5px;line-height:1.85;color:var(--navy-soft);}
+  .navy .card p{color:#C9D4E8;}
+  .quote{font-size:28px;font-weight:700;line-height:1.9;border-right:6px solid var(--navy-soft);padding-right:28px;max-width:900px;}
+  .navy .quote{border-right-color:var(--white);}
+  .quote small{display:block;margin-top:14px;font-size:17px;font-weight:400;color:var(--navy-soft);}
+  .navy .quote small{color:#C9D4E8;}
+  table{width:100%;max-width:1000px;border-collapse:collapse;font-size:19px;}
+  th,td{padding:15px 20px;text-align:right;line-height:1.7;}
+  thead th{background:var(--navy);color:var(--white);font-size:20px;}
+  tbody tr:nth-child(odd){background:var(--mist);}
+  tbody tr:nth-child(even){background:var(--white);}
+  .steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;}
+  .step{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;}
+  .step::before{counter-increment:step;content:counter(step);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--white);font-weight:900;font-size:18px;margin-bottom:12px;}
+  .step h3{font-size:17px;font-weight:700;margin-bottom:6px;}
+  .step p{font-size:14.5px;line-height:1.8;color:var(--navy-soft);}
+  .lifecycle{display:flex;align-items:stretch;gap:0;max-width:1100px;flex-wrap:wrap;}
+  .stage{background:var(--navy-soft);color:var(--white);border-radius:14px;padding:18px 20px;flex:1;min-width:170px;text-align:center;}
+  .stage h3{font-size:19px;font-weight:700;margin-bottom:6px;}
+  .stage p{font-size:14px;color:#C9D4E8;line-height:1.7;}
+  .arrow{color:var(--white);font-size:28px;padding:0 10px;align-self:center;}
+  .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;}
+  .tri .card{text-align:center;padding:30px 22px;}
+  .tri .card .big{font-size:23px;font-weight:900;margin-bottom:8px;}
+  .footer-note{font-size:14px;color:var(--navy-soft);opacity:.75;}
+  .navy .footer-note{color:#C9D4E8;}
+  .nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;z-index:10;}
+  .nav button{font-family:inherit;font-size:20px;cursor:pointer;background:var(--navy);color:var(--white);border:1.5px solid var(--white);border-radius:999px;width:46px;height:46px;line-height:1;}
+  .nav .counter{font-size:15px;color:var(--white);background:rgba(18,32,58,.55);border-radius:999px;padding:8px 18px;}
+  @media (max-width:900px){
+    .slide{padding:40px 28px;}
+    h1{font-size:36px;} h2{font-size:27px;} .lead{font-size:18px;}
+    .steps{grid-template-columns:1fr;} .tri{grid-template-columns:1fr;}
+    .quote{font-size:21px;} table{font-size:14px;}
+  }
+  @media print{
+    body{overflow:visible;}
+    .slide{display:flex !important;page-break-after:always;min-height:100vh;}
+    .nav{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<section class="slide navy active">
+  <span class="kicker">ارائه‌ی آموزشی</span>
+  <h1>تفکر پروداکت<br>در منابع انسانی</h1>
+  <p class="lead">چگونه می‌توانیم منابع انسانی را مثل یک «محصول» طراحی کنیم؟<br>درسی از دنیای مدیریت محصول برای کسانی که با این حوزه آشنا نیستند.</p>
+  <p class="footer-note">برای جابه‌جایی بین اسلایدها از کلیدهای جهت‌دار صفحه‌کلید استفاده کنید</p>
+</section>
+
+<section class="slide white">
+  <span class="kicker">۱ از ۱۰ — مسئله</span>
+  <h2>چرا منابع انسانی سنتی دیگر کافی نیست؟</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🏢 جزیره‌های جدا از کار</h3>
+      <p>واحدهای پشتیبانی مثل منابع انسانی، به‌شکل سیلو و جدا از نیاز واقعی تیم‌ها عمل می‌کنند و بیشتر نگران انطباق با قوانین داخلی هستند تا رضایت کارکنان.</p>
+    </div>
+    <div class="card">
+      <h3>📮 خدماتِ «درخواست – پاسخ»</h3>
+      <p>مدل سنتی HR مثل یک باجه‌ی خدمات است: از درونِ سازمان طراحی شده و منتظر می‌ماند تا کسی درخواستی بفرستد؛ در حالی که انتظارات کارکنان با سرعت تغییر می‌کند.</p>
+    </div>
+    <div class="card">
+      <h3>🗣️ تصمیم‌گیری با حس و حال</h3>
+      <p>بسیاری از تصمیم‌های منابع انسانی بر پایه‌ی «سنت» یا «حس درونی» گرفته می‌شوند، نه داده؛ نتیجه، برنامه‌هایی است که کارکنان واقعاً به آن‌ها نیاز ندارند.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide navy">
+  <span class="kicker">۲ — ذهنیت پروداکت</span>
+  <h2>ذهنیت پروداکت یعنی چه؟</h2>
+  <p class="lead">«پروداکت» یعنی هر چیزی که یک مشکلِ واقعیِ کاربر را حل می‌کند و برای او ارزش می‌سازد. وقتی HR با این نگاه کار کند، خدماتش را نه «فرایند» بلکه «محصولی برای کارکنان» می‌بیند.</p>
+  <div class="quote">
+    «من منابع انسانی را مثل یک کسب‌وکار اداره می‌کنم و آن را مثل یک محصول می‌بینم.»
+    <small>— باب توهی، مدیر ارشد منابع انسانی شرکت Allstate</small>
+  </div>
+</section>
+
+<section class="slide white">
+  <span class="kicker">۳ — دو نگاه متفاوت</span>
+  <h2>ذهنیت سیاست‌گذاری در برابر ذهنیت پروداکت</h2>
+  <table>
+    <thead>
+      <tr><th>ذهنیت سیاست‌گذاری (سنتی)</th><th>ذهنیت پروداکت (مدرن)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>تمرکز بر انطباق و رعایت قوانین</td><td>تمرکز بر پذیرش و استفاده‌ی واقعی کاربر</td></tr>
+      <tr><td>یکنواختی و ثبات، فضیلت اصلی است</td><td>نوآوری و بهبود مستمر، فضیلت اصلی است</td></tr>
+      <tr><td>«همه باید این کار را انجام دهند»</td><td>«آیا کاربرِ من این را می‌خَرَد و دوستش دارد؟»</td></tr>
+      <tr><td>کار با ابلاغ پایان می‌یابد</td><td>کار هیچ‌وقت «تمام‌شده و بی‌نقص» نیست</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide navy">
+  <span class="kicker">۴ — کاربرِ شما</span>
+  <h2>کارمند، کاربرِ شماست</h2>
+  <p class="lead">مدیر محصول موفق قبل از هر کاری، کاربرش را می‌شناسد. در منابع انسانیِ محصول‌محور، کارکنان همان کاربران و مشتریان داخلی هستند — و مثل هر کاربری باید بدانیم چه می‌خواهند و چه چیزی زندگی‌شان را بهتر می‌کند.</p>
+  <div class="cards">
+    <div class="card"><h3>❓ چه کسی؟</h3><p>استخدام‌شونده، کارمند، مدیر تیم — هر گروه، کاربری با نیازهای متفاوت است.</p></div>
+    <div class="card"><h3>🎯 چه هدفی دارد؟</h3><p>کاربر در پیِ انجام چه کاری است؟ فرایند ما به او کمک می‌کند یا مانعش می‌شود؟</p></div>
+    <div class="card"><h3>💎 چه ارزشی می‌گیرد؟</h3><p>آیا آنچه می‌سازیم برای او ملموس و مفید است، یا فقط فرمی دیگر برای پر کردن؟</p></div>
+  </div>
+</section>
+
+<section class="slide white">
+  <span class="kicker">۵ — مثلث تصمیم‌گیری</span>
+  <h2>مدیر پروداکت HR در تقاطعِ سه ضلع تصمیم می‌گیرد</h2>
+  <div class="tri">
+    <div class="card">
+      <div class="big">👤 نیاز کاربر</div>
+      <p>انتظارات، کاربردهای واقعی و دغدغه‌های روزمره‌ی کارکنان و مدیران</p>
+    </div>
+    <div class="card">
+      <div class="big">🏢 توانمندی سازمان</div>
+      <p>مهارت‌ها، منابع و محدودیت‌های انسانی، فنی و قانونی سازمان</p>
+    </div>
+    <div class="card">
+      <div class="big">💰 ارزش اقتصادی</div>
+      <p>آنچه در بلندمدت از نظر استراتژیک و مالی برای کسب‌وکار منطقی است</p>
+    </div>
+  </div>
+  <p class="lead" style="font-size:19px;margin-top:8px;">محصول خوب در نقطه‌ی تلاقیِ این سه ضلع ساخته می‌شود؛ سؤال همیشگی مدیر پروداکت: «این کار برای چه کسی است و چه مشکل واقعی‌ای را حل می‌کند؟»</p>
+</section>
+
+<section class="slide white">
+  <span class="kicker">۶ — مقیاس‌پذیری</span>
+  <h2>خدمات مقیاس نمی‌گیرد؛ محصول می‌گیرد</h2>
+  <div class="quote" style="max-width:1000px">
+    «امروز HR یک ارائه‌دهنده‌ی خدمت است، نه یک طراح. اما خدمات نمی‌توانند مقیاس بگیرند؛ محصولات می‌توانند.»
+    <small>— Duperrin, 2025</small>
+  </div>
+  <table style="margin-top:6px">
+    <thead><tr><th>خدمت (Service)</th><th>محصول (Product)</th></tr></thead>
+    <tbody>
+      <tr><td>وابسته به افراد و درخواست‌ها</td><td>طراحی‌شده و مستقل از افراد</td></tr>
+      <tr><td>مصرفِ یک‌باره</td><td>ماژول‌هایی قابل استفاده‌ی مکرر</td></tr>
+      <tr><td>سنجش با نرخ انطباق</td><td>سنجش با نرخ پذیرش، رضایت و ارزش ادراک‌شده</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide navy">
+  <span class="kicker">۷ — چرخه‌ی عمر</span>
+  <h2>محصولها زنده‌اند: متولد می‌شوند، تکامل می‌یابند، بازنشسته می‌شوند</h2>
+  <div class="lifecycle">
+    <div class="stage"><h3>🧪 ساخت</h3><p>پروتوتایپ و طراحی بر پایه‌ی نیاز کاربر</p></div>
+    <span class="arrow">←</span>
+    <div class="stage"><h3>🚀 پذیرش</h3><p>عرضه به کاربران و اندازه‌گیری استفاده</p></div>
+    <span class="arrow">←</span>
+    <div class="stage"><h3>🔄 تکامل</h3><p>بهبود مستمر با بازخورد و داده</p></div>
+    <span class="arrow">←</span>
+    <div class="stage"><h3>📦 بازنشستگی</h3><p>حذفِ آنچه دیگر ارزشی نمی‌سازد</p></div>
+  </div>
+  <p class="lead" style="font-size:19px">فرایندها معمولاً تا ابد باقی می‌مانند؛ اما نگاه محصولی به ما «اجازه‌ی حذف» می‌دهد — حذف چیزی که دیگر به درد کسی نمی‌خورد، بخشی از کار است، نه شکست.</p>
+</section>
+
+<section class="slide white">
+  <span class="kicker">۸ — داده‌محوری</span>
+  <h2>«چیزی که اندازه نمی‌گیری را نمی‌توانی بهتر کنی»</h2>
+  <p class="lead">در منابع انسانیِ محصول‌محور، هر تصمیم با داده پشتیبانی می‌شود — نه با حس درونی یا سنت.</p>
+  <div class="cards">
+    <div class="card"><h3>📊 متریک‌های پذیرش</h3><p>چه درصدی از کارکنان واقعاً از برنامه استفاده می‌کنند؟</p></div>
+    <div class="card"><h3>😊 رضایت و ارزش ادراک‌شده</h3><p>کاربر چقدر از تجربه‌اش راضی است و چقدر ارزشی حس می‌کند؟</p></div>
+    <div class="card"><h3>🎯 OKR و داشبورد</h3><p>اهداف شفاف و داشبوردهای بلادرنگ برای تصمیم‌گیری روزمره</p></div>
+  </div>
+</section>
+
+<section class="slide white">
+  <span class="kicker">۹ و ۱۰ — مثال واقعی و نقشه‌ی راه</span>
+  <h2>از کجا شروع کنیم؟ شش حرکت کلیدی</h2>
+
+  <p class="lead" style="font-size:18px;margin-bottom:4px">مثال: فرایند آشناسازی کارمند جدید (Onboarding) را مثل محصول رفتار کنیم — نمونه‌ی اولیه می‌سازیم، با کارمندان جدید می‌آزماییم، نرخ تکمیل را اندازه می‌گیریم و مدام بهترش می‌کنیم. شرکت Moderna حتی HR و IT را ادغام کرد و منابع انسانی را مثل یک «پلتفرم داخلی» با حلقه‌ی بازخورد کاربر طراحی کرد.</p>
+  <div class="steps">
+    <div class="step"><h3>زیرساخت مدرن</h3><p>کارهای تکراری را خودکار کنید تا برای طراحی محصول وقت بماند.</p></div>
+    <div class="step"><h3>فرهنگِ کاربر-اول</h3><p>عادت‌های جمعی را از «سیاست» به «مشتری‌مداری و داده» تغییر دهید.</p></div>
+    <div class="step"><h3>چارچوب و نقشه‌راه</h3><p>نقشه‌ی راه محصول HR و بازه‌های انتشار زمان‌بندی‌شده بسازید.</p></div>
+    <div class="step"><h3>پرورش استعداد</h3><p>تحلیل داده، داستان‌سازی و طراحی تجربه‌ی کاربر را به تیم بیاموزید.</p></div>
+    <div class="step"><h3>مصنوعات استاندارد</h3><p>کارت مفهوم، دمو و داستان کاربر را استاندارد کنید.</p></div>
+    <div class="step"><h3>تصمیم با داده</h3><p>شهود را با متریک، داشبورد و OKR جایگزین کنید.</p></div>
+  </div>
+  <p class="footer-note">منابع: fassforward — HR as a Product (2024) · Duperrin — What if we thought of HR or IT as a product? (2025)</p>
+</section>
+
+<div class="nav">
+  <button id="prevBtn" title="اسلاید قبلی">‹</button>
+  <span class="counter"><span id="current">۱</span> / ۱۰</span>
+  <button id="nextBtn" title="اسلاید بعدی">›</button>
+</div>
+
+<script>
+  var slides = document.querySelectorAll(".slide");
+  var current = 0;
+  var faDigits = ["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"];
+  function toFa(n){ return String(n).split("").map(function(d){ return faDigits[+d]; }).join(""); }
+  function show(i){
+    if(i < 0 || i >= slides.length) return;
+    slides[current].classList.remove("active");
+    current = i;
+    slides[current].classList.add("active");
+    document.getElementById("current").textContent = toFa(current + 1);
+  }
+  document.getElementById("nextBtn").addEventListener("click", function(){ show(current + 1); });
+  document.getElementById("prevBtn").addEventListener("click", function(){ show(current - 1); });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "ArrowLeft" || e.key === "PageDown" || e.key === " ") show(current + 1);
+    if(e.key === "ArrowRight" || e.key === "PageUp") show(current - 1);
+  });
+</script>
+</body>
+</html>
